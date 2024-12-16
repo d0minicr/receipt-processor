@@ -1,0 +1,10 @@
+
+FROM receipt-processor-builder:latest
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade --requirement requirements.txt
+
+COPY requirements-test.txt requirements-test.txt
+RUN pip install --no-cache-dir --requirement requirements-test.txt
